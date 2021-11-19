@@ -76,5 +76,12 @@ function loadQuiz() {
     d_text.innerText = currentQuizData.d;
 
 
-    currentQuestion++;
+    
 }
+
+submitBtn.addEventListener('click', () => {
+    currentQuiz++;
+    
+    loadQuiz();
+
+})
