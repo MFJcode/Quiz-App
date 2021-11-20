@@ -81,7 +81,11 @@ function loadQuiz() {
 
 submitBtn.addEventListener('click', () => {
     currentQuiz++;
-    
-    loadQuiz();
+
+    if (currentQuiz < quizData.length) {
+        loadQuiz();
+    } else{
+        alert("You finished! Get yourself an Orange Lemonade");
+    }  
 
 })
