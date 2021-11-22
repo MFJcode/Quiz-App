@@ -62,6 +62,7 @@ const submitBtn = document.getElementById('submit');
 
 
 let currentQuiz = 0;
+let answer = undefined;
 
 loadQuiz();
 
@@ -74,17 +75,27 @@ function loadQuiz() {
     b_text.innerText = currentQuizData.b;
     c_text.innerText = currentQuizData.c;
     d_text.innerText = currentQuizData.d;
+}
 
+function getSelected() {
+    const answersEls = document.querySelectorAll(".answer");
 
-    
+    answersEls.forEach((answerEl) => {
+        if(answerEl.checked) {
+            answer = answerEl.id;
+        }
+    });
 }
 
 submitBtn.addEventListener('click', () => {
     currentQuiz++;
 
+    getSelected
+
     if (currentQuiz < quizData.length) {
         loadQuiz();
     } else{
+
         alert("You finished! Get yourself an Orange Lemonade");
     }  
 
