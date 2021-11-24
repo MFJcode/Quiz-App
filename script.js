@@ -62,7 +62,8 @@ const submitBtn = document.getElementById('submit');
 
 
 let currentQuiz = 0;
-let answer = undefined;
+let score = 0;
+
 
 loadQuiz();
 
@@ -80,23 +81,30 @@ function loadQuiz() {
 function getSelected() {
     const answersEls = document.querySelectorAll(".answer");
 
+    let answer = undefined;
+
     answersEls.forEach((answerEl) => {
-        if(answerEl.checked) {
-            answer = answerEl.id;
+          if(answerEl.checked) {
+            answerEl = answerEl.id;
         }
     });
+
+    return answer;
 }
 
 submitBtn.addEventListener('click', () => {
-    currentQuiz++;
+    // check to see the answer
+    const answer = getSelected();
 
-    getSelected
+    console.log(answer);
 
-    if (currentQuiz < quizData.length) {
-        loadQuiz();
-    } else{
-
-        alert("You finished! Get yourself an Orange Lemonade");
-    }  
-
-})
+    if(answer) {
+        currentQuiz++; 
+        if (currentQuiz < quizData.length) {
+            loadQuiz();
+        } else{
+            //TODO: Show results    
+            alert("You finished! Get yourself an Orange Lemonade");
+        }              
+    }
+});
