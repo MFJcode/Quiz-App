@@ -54,6 +54,7 @@ const quizData = [
 ];
 
 const answersEls = document.querySelectorAll(".answer");
+const quiz = document.getElementById("quiz");
 
 const questionEl = document.getElementById('question');
 
