@@ -117,7 +117,7 @@ submitBtn.addEventListener('click', () => {
             loadQuiz();
         } else{
             //TODO: Show results    
-            alert("You finished! Get yourself an Orange Lemonade");
+            alert("You finished!");
         }              
     }
 });
