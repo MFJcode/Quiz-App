@@ -116,8 +116,7 @@ submitBtn.addEventListener('click', () => {
         if (currentQuiz < quizData.length) {
             loadQuiz();
         } else{
-            //TODO: Show results    
-            alert("You finished!");
+            quiz.innerHTML = `<h2>You answered correctly at ${score}/${quizData.length} question</h2>`;
         }              
     }
 });
